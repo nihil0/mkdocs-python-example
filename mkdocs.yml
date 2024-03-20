@@ -1,0 +1,30 @@
+site_name: "Mkdocs Python Example"
+
+repo_url: https://github.com/nihil0/mkdocs-python-example
+repo_name: mkdocs-python-example
+
+site_description: Example documentation with mkdocs
+copyright: © 2024 Neelabh Kashyap
+
+theme:
+  name: "readthedocs"
+
+plugins:
+- search: {}
+- mkdocstrings:
+    handlers:
+      python:
+        options:
+          docstring_style: google
+          docstring_options:
+            ignore_init_summary: true
+          merge_init_into_class: true
+        paths: "../"
+
+nav:
+  - Home: index.md
+  - My Package: mypackage.md
+
+exclude_docs: |
+  poetry.lock
+  pyproject.toml
